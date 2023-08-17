@@ -1,0 +1,18 @@
+.mp-page-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 148px 12px 148px;
+}
+.mp-page-layout[data-extra-padding=true] {
+    padding: 12px 280px 12px 280px;
+}
+
+/* Compact screens */
+@media (max-width: 600px) {
+    .mp-page-layout {
+        padding: 12px 24px 12px 24px;
+    }
+    .mp-page-layout[data-extra-padding=true] {
+        padding: 12px 36px 12px 36px;
+    }
+}

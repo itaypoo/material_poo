@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    /* Font */
+    --font-family: 'Roboto', sans-serif;
+
+    /* Colors */
+    --color-primary: #0b57d0;
+    --color-on-primary: #ffffff;
+    --color-primary-light: #c2e7ff;
+    --color-on-primary-light: #001d35;
+    --color-card: #e9edf6;
+    --color-on-card: #444746;
+    --color-background: #f6f9fa;
+    --color-on-background: #1f1f1f;
+    --color-outline: #7b7e81;
+    --color-error: #c2153a;
+    --color-on-error: #ffffff;
+
+    /* Text Sizes */
+    --text-size-fineprint: 12px;
+    --text-size-body: 16px;
+    --text-size-subtitle: 28px;
+    --text-size-title: 57px;
+    --text-size-heading: 112px;
+
+    /* Padding */
+    --padding-card: 24px;
+    --padding-header-card: 56px;
+
+    /* Corner Radius */
+    --corner-card: 24px;
+    --corner-header-card: 56px;
+
+    --max-w: 1000px
+}
+
+body {
+    background-color: var(--color-background);
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    font-family: var(--font-family);
+    color: var(--color-on-background);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Medium screens */
+@media (min-width: 600px) and (max-width: 840px) {
+
+}
+/* Compact screens */
+@media (max-width: 600px) {
+
+}

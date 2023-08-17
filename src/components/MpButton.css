@@ -1,0 +1,46 @@
+.mp-button {
+    font-size: var(--text-size-body);
+    height: 40px;
+    width: fit-content;
+    padding: 0 24px 0 24px;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 100ms;
+}
+.mp-button:hover {
+    opacity: 0.85;
+}
+.mp-button:active {
+    opacity: 1;
+}
+
+
+.mp-button[data-huge=true] {
+    font-size: var(--text-size-subtitle);
+    height: 80px;
+    padding: 0 57px 0 57px;
+}
+
+
+.mp-button[data-type="filled"] {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+
+.mp-button[data-type="outlined"] {
+    background-color: transparent;
+    color: var(--color-primary);
+    outline: 1px solid var(--color-outline);
+}
+.mp-button[data-type="outlined"]:hover {
+    background-color: rgba(35, 35, 35, 0.04);
+}
+
+
+.button[data-type="text"] {
+    background-color: transparent;
+    color: var(--color-primary);
+}

@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0");
+
+.mp-button:has(>.mp-icon) {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-inline-start: 16px;
+    padding-inline-end: 24px;
+    gap: 8px;
+}
+
+.mp-button[data-type="filled"] > .mp-icon {
+    color: var(--color-on-primary);
+}
+.mp-button[data-type="outlined"] > .mp-icon {
+    color: var(--color-primary);
+}
+.mp-button[data-type="text"] > .mp-icon {
+    color: var(--color-primary);
+}
+
+.mp-card[data-type="primary"] .mp-button[data-type="filled"] > .mp-icon {
+    color: var(--color-primary);
+}
+.mp-card[data-type="primary"] .mp-button[data-type="outlined"] > .mp-icon {
+    color: var(--color-on-primary);
+}
+.mp-card[data-type="primary"] .mp-button[data-type="text"] > .mp-icon {
+    color: var(--color-on-primary);
+}
