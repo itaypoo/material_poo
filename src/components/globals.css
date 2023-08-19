@@ -11,7 +11,7 @@
     --color-on-primary-light: #001d35;
     --color-card: #e9edf6;
     --color-on-card: #444746;
-    --color-background: #f6f9fa;
+    --color-background: #f8fbfd;
     --color-on-background: #1f1f1f;
     --color-outline: #7b7e81;
     --color-error: #c2153a;
@@ -49,6 +49,15 @@ html, body {
     font-family: var(--font-family);
     color: var(--color-on-background);
     -webkit-tap-highlight-color: transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background: rgba(54, 54, 54, 0.16);
+    border-radius: 10px;
 }
 
 /* Medium screens */

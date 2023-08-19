@@ -28,7 +28,10 @@
     color: var(--color-outline);
     padding: 0 6px 0 6px;
     height: 20px;
-    top: calc(50% - 11px);
+    top: calc(50% - 9px);
+    user-select: none;
+    border-radius: 100px;
+    pointer-events: none;
 }
 
 .mp-textbox:focus-within > label,
@@ -38,9 +41,9 @@
     background-color: var(--color-background);
     font-size: var(--text-size-fineprint);
     color: var(--color-primary);
-    padding: 6px;
-    height: 20px;
-    top: -13px;
+    padding: 0 8px 0 8px;
+    height: fit-content;
+    top: -8px;
 }
 
 /* .mp-textbox:has(input:not(:placeholder-shown)):not(:focus-within) FORBIDDEN CSS MAGIC (WTF?) */

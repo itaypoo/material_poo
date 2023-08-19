@@ -15,6 +15,7 @@ export default function MpSnackbar(props: MpSnackbarProps) {
     const [isVisible, setIsVisible] = useState(false)
 
     useEffect(() => {
+        if(props.message == "") return
         setIsVisible(true)
         const t = setTimeout(() => {
             setIsVisible(false)

@@ -10,71 +10,71 @@ import MpPageLayout from "./components/MpPageLayout";
 import MpNavDrawer from "./components/MpNavDrawer";
 import MpSnackbar from "./components/MpSnackbar";
 import MpIconButton from "./components/MpIconButton";
+import MpCheckbox from "./components/MpCheckbox";
+import MpStarRating from "./components/MpStarRating";
+import MpDialog from "./components/MpDialog";
 
 function App() {
     const [snackbarMsg, setSnackbarMsg] = useState("")
+    const [dialogShown, setDialogShown] = useState(false)
     const lessonsArr = [
-        "שיעור ראשון - תכנות ריאקט",
-        "שיעור שני - מה זה משתנים",
-        "שיעור שלישי - מה זה פונקציות",
-        "שיעור רביעי - מה זה קומפוננטות",
-        "שיעור חמישי - מה זה פרופס",
-        "שיעור שישי - מה זה סטייט",
-        "שיעור שביעי - מה זה קונטקסט",
-        "שיעור שמיני - מה זה רידאקס",
-        "שיעור תשיעי - מה זה ריאקט נייטיב",
-        "שיעור עשירי - מה זה ריאקט נייטיב",
-        "שיעור אחד עשר - מה זה ריאקט נייטיב",
-        "שיעור שנים עשר - מה זה ריאקט נייטיב",
-        "שיעור ראשון - תכנות ריאקט",
-        "שיעור שני - מה זה משתנים",
-        "שיעור שלישי - מה זה פונקציות",
-        "שיעור רביעי - מה זה קומפוננטות",
-        "שיעור חמישי - מה זה פרופס",
-        "שיעור שישי - מה זה סטייט",
-        "שיעור שביעי - מה זה קונטקסט",
-        "שיעור שמיני - מה זה רידאקס",
-        "שיעור תשיעי - מה זה ריאקט נייטיב",
-        "שיעור עשירי - מה זה ריאקט נייטיב",
-        "שיעור אחד עשר - מה זה ריאקט נייטיב",
-        "שיעור שנים עשר - מה זה ריאקט נייטיב",
-        "שיעור ראשון - תכנות ריאקט",
-        "שיעור שני - מה זה משתנים",
-        "שיעור שלישי - מה זה פונקציות",
-        "שיעור רביעי - מה זה קומפוננטות",
-        "שיעור חמישי - מה זה פרופס",
-        "שיעור שישי - מה זה סטייט",
-        "שיעור שביעי - מה זה קונטקסט",
-        "שיעור שמיני - מה זה רידאקס",
-        "שיעור תשיעי - מה זה ריאקט נייטיב",
-        "שיעור עשירי - מה זה ריאקט נייטיב",
-        "שיעור אחד עשר - מה זה ריאקט נייטיב",
-        "שיעור שנים עשר - מה זה ריאקט נייטיב",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
+        "Material Poo", "Material Poo",
     ]
+    const lessonIconArr = lessonsArr.map((lesson, index) => {
+        return index < 5 ? "check_circle" : "circle"
+    })
+    const isSmallScreen = useRef(window.innerWidth < 600)
 
     return (
-        <div style={{display: "grid", gridTemplateColumns: "auto 1fr"}} dir={"rtl"}>
-            <MpNavDrawer isCollapsible items={lessonsArr} onItemSelected={(index)=>{setSnackbarMsg(lessonsArr[index])}}>
-                <MpText scale="subtitle">מטריאל פו</MpText>
-            </MpNavDrawer>
-            <MpPageLayout>
-                <MpText scale="heading">מטריאל פו</MpText>
-                <MpText scale="subtitle">מטאירל יו לייק קומפוננטס פור ריאקט</MpText>
-                <MpButton type="filled">שלום עולם</MpButton>
-                <MpSwitch/>
+        <div dir={"ltr"}>
+            { !isSmallScreen.current &&
+                <MpNavDrawer items={lessonsArr} itemIcons={lessonIconArr} autoNumberItems
+                             onItemSelected={(index)=>{setSnackbarMsg(lessonsArr[index])}}
+                >
+                    <MpText scale="subtitle">Material 3</MpText>
+                </MpNavDrawer>
+            }
+            <MpPageLayout className={!isSmallScreen.current ? "mp-page-with-navbar-content" : ""}>
+                <MpText scale="heading">Material 3</MpText>
+                <MpText scale="subtitle">Material You like components for React</MpText>
+                <MpButton type="filled">Hello world</MpButton>
 
-                <MpCard type="filled">
-                    <MpText scale="subtitle">זהו קלף</MpText>
-                    <MpText scale="body">יש בו מלא דברים מגניבים.</MpText> <br/>
+                <MpCard type="outlined">
+                    <MpText scale="subtitle">This is a card.</MpText>
+                    <MpText scale="body">It holds many cool stuff.</MpText> <br/>
                     <MpButton type="outlined">
-                        <MpIcon icon='add'/>
-                        הגדרות
+                        <MpIcon icon='upload'/>
+                        Upload
                     </MpButton>
                 </MpCard>
 
+                <MpTextbox hint={"Email address"} onTextChange={setSnackbarMsg}/>
                 <MpIconButton type={"text"} icon={"navigate_next"} onClick={()=>{}}/>
-                <MpTextbox hint={"שם פרטי"} onTextChange={setSnackbarMsg}/>
                 <MpSnackbar message={snackbarMsg}/>
+                <MpSwitch/>
+                <MpCheckbox onChange={setDialogShown}/>
+                <MpStarRating isEditable initialRating={5}/>
+
+                <MpDialog isVisible={dialogShown} title="This is a dialog">
+                    <MpText scale="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</MpText>
+                    <div className="mp-dialog-buttons">
+                        <MpButton type={"outlined"} onClick={()=>{setDialogShown(false)}}>Cancel</MpButton>
+                        <MpButton type={"filled"} onClick={()=>{setDialogShown(false)}}>Okay</MpButton>
+                    </div>
+                </MpDialog>
             </MpPageLayout>
         </div>
     );

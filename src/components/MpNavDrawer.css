@@ -1,24 +1,17 @@
 .mp-nav-drawer {
     width: 360px;
+    display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
     padding: 12px;
     background-color: var(--color-card);
     font-size: var(--text-size-body);
     height: 100vh;
     overflow-y: auto;
     box-sizing: border-box;
-    border-radius: var(--corner-card) 0 0 var(--corner-card);
     overflow-x: hidden;
     transition: width 0.3s;
-}
-.mp-nav-drawer::-webkit-scrollbar {
-    width: 10px;
-    background: transparent;
-}
-.mp-nav-drawer::-webkit-scrollbar-thumb {
-    background: rgba(54, 54, 54, 0.09);
-    border-radius: 10px;
+    position: fixed;
 }
 
 .mp-nav-drawer > .mp-nav-drawer-item {
@@ -30,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: start;
+    gap: 12px;
     flex-shrink: 0;
     cursor: pointer;
     color: var(--color-on-card);
@@ -45,6 +39,17 @@
     animation: select 0.3s ease-in-out;
 }
 
+.mp-nav-drawer > .mp-nav-drawer-item > .mp-icon {
+    color: var(--color-on-card);
+}
+.mp-nav-drawer > .mp-nav-drawer-item.selected > .mp-icon {
+    color: var(--color-on-primary-light);
+}
+
+.mp-page-with-navbar-content {
+    margin-inline-start: 360px;
+}
+
 @keyframes select {
     0% {
         background-color: rgba(70, 70, 70, 0.06);
@@ -57,11 +62,4 @@
         background-color: var(--color-primary-light);
         color: var(--color-on-primary-light);
     }
-}
-
-
-.mp-nav-drawer[data-collapsed="true"] {
-    width: 40px;
-    padding: 12px 0 0;
-    overflow-y: hidden;
 }

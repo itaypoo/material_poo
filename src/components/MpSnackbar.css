@@ -67,3 +67,12 @@
         display: none;
     }
 }
+
+/* Compact screens */
+@media (max-width: 600px) {
+    .mp-snackbar > div {
+        width: 100%;
+        margin: 0 12px;
+        height: fit-content;
+    }
+}
