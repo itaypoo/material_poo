@@ -26,8 +26,8 @@
     height: 8px;
 }
 .mp-checkbox:active[data-checked="true"] > .mp-checkbox-thumb {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 30px;
 }
 
 .mp-checkbox > .mp-icon {
@@ -48,7 +48,7 @@
 }
 
 .mp-checkbox[data-checked="true"] > .mp-checkbox-thumb {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     background-color: var(--color-primary);
 }

@@ -1,5 +1,4 @@
-import {ChangeEvent, useState} from "react";
-import "./MpCheckbox.css";
+import {ChangeEvent, useEffect, useState} from "react";
 import MpIcon from "./MpIcon";
 
 type MpCheckboxProps = {
@@ -10,6 +9,10 @@ type MpCheckboxProps = {
 
 export default function MpCheckbox(props: MpCheckboxProps) {
     const [isChecked, setIsChecked] = useState(!!props.checkedInitially);
+
+    useEffect(() => {
+        setIsChecked(props.checkedInitially || false)
+    }, [props.checkedInitially]);
 
     const handleChange = () => {
         setIsChecked(!isChecked);

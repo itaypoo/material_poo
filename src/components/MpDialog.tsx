@@ -1,4 +1,3 @@
-import "./MpDialog.css"
 import React from "react";
 
 type MpDialogProps = {

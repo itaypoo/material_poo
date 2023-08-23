@@ -1,4 +1,3 @@
-import "./MpPageLayout.css"
 import React from "react";
 
 type MpPageLayoutProps = {

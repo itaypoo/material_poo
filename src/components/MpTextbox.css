@@ -7,6 +7,8 @@
     background-color: var(--color-background);
     color: var(--color-on-background);
     font-size: var(--text-size-body);
+    width: 100%;
+    box-sizing: border-box;
 }
 .mp-textbox:focus-within > input {
     outline: 2px solid var(--color-primary);
@@ -18,6 +20,27 @@
 .mp-textbox {
     position: relative;
     display: inline-block;
+    width: unset;
+}
+
+.mp-card[data-type="filled"] .mp-textbox > input {
+    background-color: var(--color-card);
+}
+.mp-card[data-type="filled"] .mp-textbox > label {
+    background-color: var(--color-card);
+}
+.mp-card[data-type="primary"] .mp-textbox > input {
+    background-color: var(--color-primary);
+}
+.mp-card[data-type="primary"] .mp-textbox > label {
+    background-color: var(--color-primary);
+}
+
+.mp-dialog .mp-textbox > input {
+    background-color: var(--color-card);
+}
+.mp-dialog .mp-textbox > label {
+    background-color: var(--color-card) !important;
 }
 
 .mp-textbox > label {

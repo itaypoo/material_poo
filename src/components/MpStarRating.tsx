@@ -1,4 +1,3 @@
-import "./MpStarRating.css"
 import {useState} from "react";
 import MpIcon from "./MpIcon";
 

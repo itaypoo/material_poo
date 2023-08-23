@@ -10,9 +10,9 @@
 /* Compact screens */
 @media (max-width: 600px) {
     .mp-page-layout {
-        padding: 12px 24px 12px 24px;
+        padding: 12px 16px 12px 16px;
     }
     .mp-page-layout[data-extra-padding=true] {
-        padding: 12px 36px 12px 36px;
+        padding: 12px 24px 12px 24px;
     }
 }

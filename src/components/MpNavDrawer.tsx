@@ -1,4 +1,3 @@
-import "./MpNavDrawer.css"
 import React, {useState} from "react";
 import MpIcon from "./MpIcon";
 
@@ -27,7 +26,7 @@ export default function MpNavDrawer(props: React.PropsWithChildren<MpNavDrawerPr
                             <MpIcon icon={props.itemIcons[index]}/>
                         }
                         { props.autoNumberItems &&
-                            <p>{index+1+" | "+item}</p>
+                            <p>{index+" | "+item}</p>
                         }
                         { !props.autoNumberItems &&
                             <p>{item}</p>

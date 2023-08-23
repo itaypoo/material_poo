@@ -9,6 +9,15 @@
     transition: 100ms ease-in-out;
 }
 
+.mp-icon-button:active {
+    opacity: 0.6;
+}
+
+.mp-icon-button[data-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
 .mp-icon-button > .mp-icon {
     height: 24px;
     width: 24px;
@@ -29,17 +38,17 @@
     outline: 1px solid var(--color-outline);
 }
 .mp-icon-button[data-type="outlined"]:hover {
-    background-color: rgba(35, 35, 35, 0.04);
+    background-color: var(--color-hover-background);;
 }
 .mp-icon-button[data-type="outlined"] > .mp-icon {
-    color: var(--color-primary);
+    color: var(--color-outline);
 }
 
 .mp-icon-button[data-type="text"] {
     background-color: transparent;
 }
 .mp-icon-button[data-type="text"]:hover {
-    background-color: rgba(35, 35, 35, 0.09);
+    background-color: var(--color-hover-background);;
 }
 .mp-icon-button[data-type="text"] > .mp-icon {
     color: var(--color-on-background);

@@ -1,5 +1,4 @@
 import React from "react";
-import './MpText.css';
 
 type MpTextProps = {
     scale: "fineprint" | "body" | "subtitle" | "title" | "heading",

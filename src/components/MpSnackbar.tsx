@@ -1,4 +1,3 @@
-import "./MpSnackbar.css"
 import {useEffect, useState} from "react";
 import MpIconButton from "./MpIconButton";
 

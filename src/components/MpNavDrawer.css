@@ -29,7 +29,7 @@
     color: var(--color-on-card);
 }
 .mp-nav-drawer > .mp-nav-drawer-item:hover {
-    background-color: rgba(70, 70, 70, 0.06);
+    background-color: var(--color-hover-background);;
 }
 
 .mp-nav-drawer > .mp-nav-drawer-item.selected {
@@ -52,7 +52,7 @@
 
 @keyframes select {
     0% {
-        background-color: rgba(70, 70, 70, 0.06);
+        background-color: var(--color-hover-background);;
         color: var(--color-on-card);
     }
     50% {

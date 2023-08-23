@@ -2,6 +2,7 @@
     width: fit-content;
     padding: var(--padding-card);
     border-radius: var(--corner-card);
+    box-sizing: border-box;
 }
 .mp-card[data-header=true] {
     padding: var(--padding-header-card);

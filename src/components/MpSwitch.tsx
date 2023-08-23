@@ -1,4 +1,3 @@
-import "./MpSwitch.css"
 import React, {useState} from "react";
 
 type MpSwitchProps = {

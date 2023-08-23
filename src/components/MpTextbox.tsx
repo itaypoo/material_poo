@@ -1,4 +1,3 @@
-import "./MpTextbox.css"
 import React, {useState} from "react";
 
 type MpTextboxProps = {

@@ -2,6 +2,8 @@
     width: 22px;
     height: 22px;
     transition: scale 100ms ease-in-out;
+    user-select: none;
+    -webkit-user-drag: none;
     /* Color: #696969, Generated using: https://codepen.io/sosuke/pen/Pjoqqp */
     filter: invert(40%) sepia(0%) saturate(1716%) hue-rotate(197deg) brightness(100%) contrast(89%);
 }

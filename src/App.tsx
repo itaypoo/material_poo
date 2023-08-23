@@ -13,11 +13,35 @@ import MpIconButton from "./components/MpIconButton";
 import MpCheckbox from "./components/MpCheckbox";
 import MpStarRating from "./components/MpStarRating";
 import MpDialog from "./components/MpDialog";
+import './components/MpText.css'
+import './components/MpButton.css'
+import './components/MpSwitch.css'
+import './components/MpCard.css'
+import './components/MpIcon.css'
+import './components/MpTextbox.css'
+import './components/MpPageLayout.css'
+import './components/MpNavDrawer.css'
+import './components/MpSnackbar.css'
+import './components/MpIconButton.css'
+import './components/MpCheckbox.css'
+import './components/MpStarRating.css'
+import './components/MpDialog.css'
+import './components/MpTextarea.css'
+import './components/MpNavRail.css'
+import MpNavRail from "./components/MpNavRail";
 
 function App() {
     const [snackbarMsg, setSnackbarMsg] = useState("")
     const [dialogShown, setDialogShown] = useState(false)
-    const lessonsArr = [
+    const [navDrawerShown, setNavDrawerShown] = useState(true)
+    const isSmallScreen = useRef(window.innerWidth < 600)
+
+    const navRailItems = [
+        {icon: "home", label: "Home", id: "home"},
+        {icon: "favorite", label: "Favorites", id: "favorites"},
+    ]
+
+    const navDrawerItems = [
         "Material Poo", "Material Poo",
         "Material Poo", "Material Poo",
         "Material Poo", "Material Poo",
@@ -33,24 +57,30 @@ function App() {
         "Material Poo", "Material Poo",
         "Material Poo", "Material Poo",
     ]
-    const lessonIconArr = lessonsArr.map((lesson, index) => {
+    const navDrawerIcons = navDrawerItems.map((lesson, index) => {
         return index < 5 ? "check_circle" : "circle"
     })
-    const isSmallScreen = useRef(window.innerWidth < 600)
 
     return (
         <div dir={"ltr"}>
-            { !isSmallScreen.current &&
-                <MpNavDrawer items={lessonsArr} itemIcons={lessonIconArr} autoNumberItems
-                             onItemSelected={(index)=>{setSnackbarMsg(lessonsArr[index])}}
+            { !isSmallScreen.current && navDrawerShown &&
+                <MpNavDrawer items={navDrawerItems} itemIcons={navDrawerIcons} autoNumberItems
+                             onItemSelected={(index)=>{setSnackbarMsg(navDrawerItems[index])}}
                 >
                     <MpText scale="subtitle">Material 3</MpText>
                 </MpNavDrawer>
             }
+            { !isSmallScreen.current && !navDrawerShown &&
+                <MpNavRail
+                    items={navRailItems}
+                    initialSelectedId={navRailItems[0].id}
+                    fabIcon={"add"}
+                />
+            }
             <MpPageLayout className={!isSmallScreen.current ? "mp-page-with-navbar-content" : ""}>
                 <MpText scale="heading">Material 3</MpText>
                 <MpText scale="subtitle">Material You like components for React</MpText>
-                <MpButton type="filled">Hello world</MpButton>
+                <MpButton type="filled" onClick={()=>{setDialogShown(true)}}>Hello world</MpButton>
 
                 <MpCard type="outlined">
                     <MpText scale="subtitle">This is a card.</MpText>
@@ -65,7 +95,7 @@ function App() {
                 <MpIconButton type={"text"} icon={"navigate_next"} onClick={()=>{}}/>
                 <MpSnackbar message={snackbarMsg}/>
                 <MpSwitch/>
-                <MpCheckbox onChange={setDialogShown}/>
+                <MpCheckbox onChange={setNavDrawerShown}/>
                 <MpStarRating isEditable initialRating={5}/>
 
                 <MpDialog isVisible={dialogShown} title="This is a dialog">
